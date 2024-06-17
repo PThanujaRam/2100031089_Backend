@@ -7,6 +7,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 
+
+
 class Customers(db.Model):
     __tablename__ = 'customers'
     CustomerID = db.Column(db.Integer, primary_key=True)
@@ -20,11 +22,7 @@ class Products(db.Model):
     ProductName = db.Column(db.String(50))
     Price = db.Column(db.Float)
 
-class Orders(db.Model):
-    __tablename__ = 'orders'
-    OrderID = db.Column(db.Integer, primary_key=True)
-    CustomerID = db.Column(db.Integer, db.ForeignKey('customers.CustomerID'))
-    OrderDate = db.Column(db.Date)
+
 
 class OrderItems(db.Model):
     __tablename__ = 'orderItems'
