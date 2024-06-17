@@ -10,7 +10,7 @@ db = SQLAlchemy(app)
 class Customers(db.Model):
     __tablename__ = 'customers'
     CustomerID = db.Column(db.Integer, primary_key=True)
-    FirstName = db.Column(db.String(50))
+    
     LastName = db.Column(db.String(50))
     Email = db.Column(db.String(100))
     DateOfBirth = db.Column(db.Date)
